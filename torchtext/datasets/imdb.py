@@ -69,7 +69,7 @@ class IMDB(data.Dataset):
             Remaining keyword arguments: Passed to the splits method.
         """
         TEXT = data.Field()
-        LABEL = data.Field(sequential=False)
+        LABEL = data.Field(sequential=False, unk_token=None)
 
         train, test = cls.splits(TEXT, LABEL, root=root, **kwargs)
 
